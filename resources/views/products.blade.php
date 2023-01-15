@@ -14,8 +14,10 @@
                     <p>{{ $product->description }}</p>
                     <div class="">
                         <p><strong>Price: </strong> {{ $product->price }}$</p>
-                        <form action="{{ route('cart:addItem', $product->id) }}" method="POST">
+                        <form action="{{ route('cart:addItem') }}" method="POST">
                             @csrf
+
+                            <input type="hidden" name="id" value="{{ $product->id }}">
                             <p class="btn-holder">
                             <input type="submit" value="Add to cart" class="btn btn-warning btn-block text-center" />
                             </p>
