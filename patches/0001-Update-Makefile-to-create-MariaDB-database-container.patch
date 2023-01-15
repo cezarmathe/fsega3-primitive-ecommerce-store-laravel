@@ -1,0 +1,34 @@
+From 3d16e0038275e8644d5937b1dbba2519d0fff8d8 Mon Sep 17 00:00:00 2001
+From: Armand-Cezar Mathe <me@cezarmathe.com>
+Date: Sun, 15 Jan 2023 00:58:17 +0200
+Subject: [PATCH] Update Makefile to create MariaDB database container
+
+---
+ Makefile | 10 ++++++----
+ 1 file changed, 6 insertions(+), 4 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 84efc47..58a0030 100644
+--- a/Makefile
++++ b/Makefile
+@@ -32,11 +32,13 @@ db-teardown: db-stop db-destroy
+ db-create:
+ 	@ echo "--> Creating database container"
+ 	podman create \
+-		-p 5432:5432 \
++		-p 3306:3306\
+ 		--name ecommerce-db \
+-		-e POSTGRES_DB=ecommerce \
+-		-e POSTGRES_HOST_AUTH_METHOD=trust \
+-		postgres:latest
++		-e MARIADB_USER=ecommerce \
++		-e MARIADB_PASSWORD=Password12345. \
++		-e MARIADB_ROOT_PASSWORD=Password12345. \
++		-e MARIADB_DATABASE=ecommerce \
++		docker.io/library/mariadb:latest
+ .PHONY: db-create
+ 
+ ## db-destroy: Destroy the database container.
+-- 
+2.39.0
+
