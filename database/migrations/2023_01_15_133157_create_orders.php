@@ -17,6 +17,8 @@ class CreateOrders extends Migration
             $table->id();
             $table->timestamps();
 
+            $table->decimal('total');
+
             $table->foreignId('user_id')->constrained('users');
         });
     }
