@@ -79,8 +79,6 @@
                         </div>
                         <div class="row">
                             <a href="{{ route('cart:index')}}" type="button" class="col btn btn-primary mx-2">Cos produse</a>
-                        </div>
-                        <div class="row">
                             <a href="{{ route('order:list')}}" type="button" class="col btn btn-primary mx-2">Comenzi</a>
                         </div>
                     </div>
@@ -89,7 +87,7 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="py-4" style="margin-top: 200px">
             @yield('content')
         </main>
     </div>

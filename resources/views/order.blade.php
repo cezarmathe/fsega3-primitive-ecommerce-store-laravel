@@ -18,11 +18,11 @@
                 <div class="row">
                     <div class="col-sm-3 hidden-xs"><img src="{{ $orderItem['product']['image'] }}" width="100" height="100" class="img-responsive" /></div>
                     <div class="col-sm-9">
-                        <h4 class="nomargin">{{ $orderItem['name'] }}</h4>
+                        <h4 class="nomargin">{{ $orderItem['product']['name'] }}</h4>
                     </div>
                 </div>
             </td>
-            <td data-th="Price">${{ $orderItem['price'] }}</td>
+            <td data-th="Price">${{ $orderItem['product']['price'] }}</td>
             <td data-th="Quantity"> {{ $orderItem['quantity'] }} </td>
             <td data-th="Subtotal" class="text-center">${{ $orderItem['product']['price'] * $orderItem['quantity'] }}</td>
         </tr>
