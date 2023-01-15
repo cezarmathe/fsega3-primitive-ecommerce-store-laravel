@@ -21,11 +21,11 @@ class UserFactory extends Factory
         ];
     }
 
-    public function unverified()
+    public function admin()
     {
         return $this->state(function (array $attributes) {
             return [
-                'email_verified_at' => null,
+                'is_admin' => true,
             ];
         });
     }
