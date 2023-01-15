@@ -69,6 +69,8 @@ db-stop:
 db-seed:
 	@ echo "--> Seeding database"
 	php artisan db:seed
+
+	cat sql/seed-order.sql | podman exec -i ecommerce-db psql -U postgres ecommerce
 .PHONY: db-seed
 
 ## db-migrate: Migrate the database.
