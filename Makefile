@@ -14,6 +14,7 @@ help:
 
 ## init: Initialize the project.
 init:
+	composer install
 	@ ./scripts/init.sh
 .PHONY: init
 
